@@ -12,7 +12,7 @@ def lambda_handler(event, context):
     
 
     # Fetch the JSON data
-    print("Request from API Gateway, queying the bucket: {}, object: {}".format(bucket_name, file_name))
+    print("Request from API Gateway, querying the bucket: {}, object: {}".format(bucket_name, file_name))
     response = s3.get_object(Bucket=bucket_name, Key=file_name)
     file_content = response['Body'].read().decode('utf-8')
     data = json.loads(file_content)
